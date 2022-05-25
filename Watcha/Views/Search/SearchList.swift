@@ -8,16 +8,20 @@
 import SwiftUI
 
 struct SearchList: View {
+    @StateObject var searchViewModel = SearchViewModel()
+    
     var body: some View {
         VStack{
             SearchBar()
-            Spacer()
+                .environmentObject(searchViewModel)
+            
             List {
                 
             }
         }
         .navigationTitle("Search")
         .navigationBarTitleDisplayMode(.inline)
+        
     }
 }
 

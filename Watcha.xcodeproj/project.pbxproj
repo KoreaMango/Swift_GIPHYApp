@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04AEF9C8283DFC73002744B7 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AEF9C7283DFC73002744B7 /* SearchViewModel.swift */; };
 		04CA4AA5283D9C250094AC30 /* WatchaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4AA4283D9C250094AC30 /* WatchaApp.swift */; };
 		04CA4AA9283D9C260094AC30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4AA8283D9C260094AC30 /* Assets.xcassets */; };
 		04CA4AAC283D9C260094AC30 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4AAB283D9C260094AC30 /* Preview Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04AEF9C7283DFC73002744B7 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		04CA4AA1283D9C250094AC30 /* Watcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04CA4AA4283D9C250094AC30 /* WatchaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchaApp.swift; sourceTree = "<group>"; };
 		04CA4AA8283D9C260094AC30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				04CA4AB3283D9CE90094AC30 /* SearchBar.swift */,
 				04CA4AC0283D9F3F0094AC30 /* SearchRow.swift */,
 				04CA4AB7283D9D0B0094AC30 /* SearchDetail.swift */,
+				04AEF9C7283DFC73002744B7 /* SearchViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				04CA4ACF283DD32A0094AC30 /* Images.swift in Sources */,
 				04CA4ABE283D9DEA0094AC30 /* ContentView.swift in Sources */,
 				04CA4AB8283D9D0B0094AC30 /* SearchDetail.swift in Sources */,
+				04AEF9C8283DFC73002744B7 /* SearchViewModel.swift in Sources */,
 				04CA4AB4283D9CE90094AC30 /* SearchBar.swift in Sources */,
 				04CA4AA5283D9C250094AC30 /* WatchaApp.swift in Sources */,
 				04CA4AC1283D9F3F0094AC30 /* SearchRow.swift in Sources */,

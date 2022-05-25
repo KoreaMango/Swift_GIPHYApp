@@ -8,13 +8,22 @@
 import SwiftUI
 
 struct SearchBar: View {
+    @EnvironmentObject var searchViewModel: SearchViewModel
     var body: some View {
         HStack{
-            Text("헬로우")
-            Spacer()
-            Button("Search"){
+            TextField("Search GIPHY",text: $searchViewModel.searchTextField)
+                .padding(.leading)
                 
+            Spacer()
+            Button(action: {}){
+                Image(systemName: "magnifyingglass")
             }
+            .padding()
+            .foregroundColor(.white)
+            .background(
+                Rectangle()
+                    .foregroundColor(.pink)
+            )
         }
     }
 }
@@ -22,5 +31,6 @@ struct SearchBar: View {
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         SearchBar()
+            .environmentObject(SearchViewModel())
     }
 }
