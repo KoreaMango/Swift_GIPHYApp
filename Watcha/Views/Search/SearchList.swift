@@ -14,7 +14,7 @@ struct SearchList: View {
         VStack{
             SearchBar()
                 .environmentObject(searchViewModel)
-            
+            modePicker()
             List {
                 
             }
