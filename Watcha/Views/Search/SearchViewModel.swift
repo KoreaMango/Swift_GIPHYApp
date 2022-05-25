@@ -12,6 +12,6 @@ class SearchViewModel : ObservableObject{
     
     
     func getResult(selection: gifOrSticker) {
-        APIManager.shared.callAPI(q: "HI",selection: selection)
+        APIManager.shared.callAPI(q: searchTextField, selection: selection)
     }
 }

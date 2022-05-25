@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Images {
+struct Images: Decodable {
     struct fixed_height {
         var url: String
         var width: String

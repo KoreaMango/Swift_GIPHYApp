@@ -21,7 +21,6 @@
 		04CA4ABE283D9DEA0094AC30 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4ABD283D9DEA0094AC30 /* ContentView.swift */; };
 		04CA4AC1283D9F3F0094AC30 /* modePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4AC0283D9F3F0094AC30 /* modePicker.swift */; };
 		04CA4AC9283DCFF50094AC30 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4AC8283DCFF50094AC30 /* APIManager.swift */; };
-		04CA4ACB283DD0000094AC30 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4ACA283DD0000094AC30 /* APIServices.swift */; };
 		04CA4ACD283DD2B10094AC30 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4ACC283DD2B10094AC30 /* User.swift */; };
 		04CA4ACF283DD32A0094AC30 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4ACE283DD32A0094AC30 /* Images.swift */; };
 /* End PBXBuildFile section */
@@ -42,7 +41,6 @@
 		04CA4ABD283D9DEA0094AC30 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		04CA4AC0283D9F3F0094AC30 /* modePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modePicker.swift; sourceTree = "<group>"; };
 		04CA4AC8283DCFF50094AC30 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		04CA4ACA283DD0000094AC30 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
 		04CA4ACC283DD2B10094AC30 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		04CA4ACE283DD32A0094AC30 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,7 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				04CA4AC8283DCFF50094AC30 /* APIManager.swift */,
-				04CA4ACA283DD0000094AC30 /* APIServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -244,7 +241,6 @@
 				04CA4AC1283D9F3F0094AC30 /* modePicker.swift in Sources */,
 				04AEF9D4283E1CB3002744B7 /* PickerModel.swift in Sources */,
 				04CA4ACD283DD2B10094AC30 /* User.swift in Sources */,
-				04CA4ACB283DD0000094AC30 /* APIServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
