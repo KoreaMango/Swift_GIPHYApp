@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		04AEF9C8283DFC73002744B7 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AEF9C7283DFC73002744B7 /* SearchViewModel.swift */; };
 		04AEF9CB283E0773002744B7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04AEF9CA283E0773002744B7 /* Alamofire */; };
-		04AEF9D0283E0997002744B7 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AEF9CF283E0997002744B7 /* URL.swift */; };
+		04AEF9D0283E0997002744B7 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AEF9CF283E0997002744B7 /* AppConstant.swift */; };
 		04CA4AA5283D9C250094AC30 /* WatchaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4AA4283D9C250094AC30 /* WatchaApp.swift */; };
 		04CA4AA9283D9C260094AC30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4AA8283D9C260094AC30 /* Assets.xcassets */; };
 		04CA4AAC283D9C260094AC30 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CA4AAB283D9C260094AC30 /* Preview Assets.xcassets */; };
@@ -27,7 +27,8 @@
 
 /* Begin PBXFileReference section */
 		04AEF9C7283DFC73002744B7 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
-		04AEF9CF283E0997002744B7 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		04AEF9CF283E0997002744B7 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
+		04AEF9D1283E0FE6002744B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		04CA4AA1283D9C250094AC30 /* Watcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04CA4AA4283D9C250094AC30 /* WatchaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchaApp.swift; sourceTree = "<group>"; };
 		04CA4AA8283D9C260094AC30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,7 +60,7 @@
 		04AEF9CC283E095C002744B7 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				04AEF9CF283E0997002744B7 /* URL.swift */,
+				04AEF9CF283E0997002744B7 /* AppConstant.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -89,6 +90,7 @@
 				04CA4AB2283D9C6E0094AC30 /* Views */,
 				04CA4AC7283DCFB50094AC30 /* Services */,
 				04CA4AA8283D9C260094AC30 /* Assets.xcassets */,
+				04AEF9D1283E0FE6002744B7 /* Info.plist */,
 				04CA4AAA283D9C260094AC30 /* Preview Content */,
 			);
 			path = Watcha;
@@ -231,7 +233,7 @@
 				04CA4AB6283D9CFE0094AC30 /* SearchList.swift in Sources */,
 				04CA4ACF283DD32A0094AC30 /* Images.swift in Sources */,
 				04CA4ABE283D9DEA0094AC30 /* ContentView.swift in Sources */,
-				04AEF9D0283E0997002744B7 /* URL.swift in Sources */,
+				04AEF9D0283E0997002744B7 /* AppConstant.swift in Sources */,
 				04CA4AB8283D9D0B0094AC30 /* SearchDetail.swift in Sources */,
 				04AEF9C8283DFC73002744B7 /* SearchViewModel.swift in Sources */,
 				04CA4AB4283D9CE90094AC30 /* SearchBar.swift in Sources */,
@@ -369,6 +371,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Watcha/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Watcha/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -397,6 +400,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Watcha/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Watcha/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
