@@ -7,7 +7,5 @@
 
 import Foundation
 
-class GIPHY : ObservableObject{
-    
-}
+
 
