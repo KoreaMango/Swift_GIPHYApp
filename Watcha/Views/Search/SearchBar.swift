@@ -16,7 +16,7 @@ struct SearchBar: View {
                 
             Spacer()
             Button(action: {
-                searchViewModel.callAPI()
+                searchViewModel.getResult()
             }){
                 Image(systemName: "magnifyingglass")
             }
