@@ -8,7 +8,7 @@
 import Foundation
 
 struct AppConstant {
-    static let serverURL : String = "api.giphy.com/v1"
+    static let serverURL : String = "https://api.giphy.com/v1"
     
     enum nextURL{
         static let gifURL : String = "/gifs/search"
