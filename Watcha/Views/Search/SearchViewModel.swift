@@ -10,4 +10,8 @@ import Foundation
 class SearchViewModel : ObservableObject{
     @Published var searchTextField : String = ""
     
+    
+    func callAPI() {
+        
+    }
 }

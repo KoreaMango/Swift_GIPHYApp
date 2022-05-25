@@ -15,7 +15,9 @@ struct SearchBar: View {
                 .padding(.leading)
                 
             Spacer()
-            Button(action: {}){
+            Button(action: {
+                searchViewModel.callAPI()
+            }){
                 Image(systemName: "magnifyingglass")
             }
             .padding()
