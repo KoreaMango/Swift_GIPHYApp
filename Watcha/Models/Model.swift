@@ -30,6 +30,7 @@ struct ResponseData{
     var rating: String
     var content_url: String
     var user : User
+    var is_sticker : Int
     var source_tId: String
     var source_post_url : String
     var update_datetime: String
