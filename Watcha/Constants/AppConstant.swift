@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct URL {
+struct AppConstant {
     static let serverURL : String = "api.giphy.com/v1"
     
     enum nextURL{
