@@ -16,6 +16,10 @@
 		04CA4ABC283D9D600094AC30 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4ABB283D9D600094AC30 /* Model.swift */; };
 		04CA4ABE283D9DEA0094AC30 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4ABD283D9DEA0094AC30 /* ContentView.swift */; };
 		04CA4AC1283D9F3F0094AC30 /* SearchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4AC0283D9F3F0094AC30 /* SearchRow.swift */; };
+		04CA4AC9283DCFF50094AC30 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4AC8283DCFF50094AC30 /* APIManager.swift */; };
+		04CA4ACB283DD0000094AC30 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4ACA283DD0000094AC30 /* APIServices.swift */; };
+		04CA4ACD283DD2B10094AC30 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4ACC283DD2B10094AC30 /* User.swift */; };
+		04CA4ACF283DD32A0094AC30 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4ACE283DD32A0094AC30 /* Images.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		04CA4ABB283D9D600094AC30 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		04CA4ABD283D9DEA0094AC30 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		04CA4AC0283D9F3F0094AC30 /* SearchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRow.swift; sourceTree = "<group>"; };
+		04CA4AC8283DCFF50094AC30 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		04CA4ACA283DD0000094AC30 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
+		04CA4ACC283DD2B10094AC30 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		04CA4ACE283DD32A0094AC30 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 				04CA4ABA283D9D370094AC30 /* Application */,
 				04CA4AB9283D9D270094AC30 /* Models */,
 				04CA4AB2283D9C6E0094AC30 /* Views */,
+				04CA4AC7283DCFB50094AC30 /* Services */,
 				04CA4AA8283D9C260094AC30 /* Assets.xcassets */,
 				04CA4AAA283D9C260094AC30 /* Preview Content */,
 			);
@@ -91,6 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				04CA4ABB283D9D600094AC30 /* Model.swift */,
+				04CA4ACC283DD2B10094AC30 /* User.swift */,
+				04CA4ACE283DD32A0094AC30 /* Images.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -112,6 +123,15 @@
 				04CA4AB7283D9D0B0094AC30 /* SearchDetail.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		04CA4AC7283DCFB50094AC30 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				04CA4AC8283DCFF50094AC30 /* APIManager.swift */,
+				04CA4ACA283DD0000094AC30 /* APIServices.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,13 +204,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04CA4AC9283DCFF50094AC30 /* APIManager.swift in Sources */,
 				04CA4ABC283D9D600094AC30 /* Model.swift in Sources */,
 				04CA4AB6283D9CFE0094AC30 /* SearchList.swift in Sources */,
+				04CA4ACF283DD32A0094AC30 /* Images.swift in Sources */,
 				04CA4ABE283D9DEA0094AC30 /* ContentView.swift in Sources */,
 				04CA4AB8283D9D0B0094AC30 /* SearchDetail.swift in Sources */,
 				04CA4AB4283D9CE90094AC30 /* SearchBar.swift in Sources */,
 				04CA4AA5283D9C250094AC30 /* WatchaApp.swift in Sources */,
 				04CA4AC1283D9F3F0094AC30 /* SearchRow.swift in Sources */,
+				04CA4ACD283DD2B10094AC30 /* User.swift in Sources */,
+				04CA4ACB283DD0000094AC30 /* APIServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
