@@ -12,6 +12,6 @@ struct AppConstant {
     
     enum nextURL{
         static let gifURL : String = "/gifs/search"
-        static let Sticker : String = "/stickers/search"
+        static let stickerURL : String = "/stickers/search"
     }
 }
