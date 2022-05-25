@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct modePicker: View {
-    @State var selectCase : gifOrSticker = .GIFMode
+    @Binding var selectCase : gifOrSticker
     var body: some View {
         Picker("", selection: $selectCase) {
             ForEach(pickerCase.allCases){ object in
@@ -17,14 +17,11 @@ struct modePicker: View {
             }
         }
         .pickerStyle(.segmented)
-        .onChange(of: selectCase){ _ in
-               
-        }
     }
 }
 
 struct modePicker_Previews: PreviewProvider {
     static var previews: some View {
-        modePicker()
+        modePicker(selectCase: .constant(.GIFMode))
     }
 }

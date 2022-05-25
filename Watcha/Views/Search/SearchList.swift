@@ -9,12 +9,13 @@ import SwiftUI
 
 struct SearchList: View {
     @StateObject var searchViewModel = SearchViewModel()
+    @State var selectCase : gifOrSticker = .GIFMode
     
     var body: some View {
         VStack{
-            SearchBar()
+            SearchBar(selectCase: $selectCase)
                 .environmentObject(searchViewModel)
-            modePicker()
+            modePicker(selectCase: $selectCase)
             List {
                 
             }

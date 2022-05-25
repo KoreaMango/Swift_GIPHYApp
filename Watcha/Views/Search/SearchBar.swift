@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SearchBar: View {
     @EnvironmentObject var searchViewModel: SearchViewModel
+    @Binding var selectCase : gifOrSticker
+    
     var body: some View {
         HStack{
             TextField("Search GIPHY",text: $searchViewModel.searchTextField)
@@ -16,7 +18,7 @@ struct SearchBar: View {
                 
             Spacer()
             Button(action: {
-                searchViewModel.getResult()
+                searchViewModel.getResult(selection: selectCase)
             }){
                 Image(systemName: "magnifyingglass")
             }
@@ -32,7 +34,7 @@ struct SearchBar: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar()
+        SearchBar(selectCase: .constant(.GIFMode))
             .environmentObject(SearchViewModel())
     }
 }

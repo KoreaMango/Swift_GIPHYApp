@@ -6,3 +6,26 @@
 //
 
 import Foundation
+import Alamofire
+
+class APIManager {
+    public static let shared = APIManager()
+    
+    private let apiKeyOptional = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String
+    var finalURL : String = ""
+    
+    func callAPI(q: String, limit: Int = 25 , offset : Int = 0 , rating : String = "g", lang: String = "en", selection: gifOrSticker){
+        if let apiKey = apiKeyOptional {
+            if selection == .StickerMode{
+                finalURL = "\(AppConstant.serverURL)\(AppConstant.nextURL.stickerURL)" + "?api_key=" + "\(apiKey)" + "&q=" + "\(q)" +
+                "&limit=" + "\(limit)" + "&offset=" + "\(offset)" + "&rating=" + "\(lang)" + "&lang=" + "\(lang)"
+            } else {
+                finalURL = "\(AppConstant.serverURL)\(AppConstant.nextURL.gifURL)" + "?api_key=" + "\(apiKey)" + "&q=" + "\(q)" +
+                "&limit=" + "\(limit)" + "&offset=" + "\(offset)" + "&rating=" + "\(lang)" + "&lang=" + "\(lang)"
+            }
+        }
+        
+        
+    }
+    
+}
