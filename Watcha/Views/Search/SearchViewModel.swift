@@ -19,10 +19,6 @@ class SearchViewModel : ObservableObject{
         APIManager.shared.callAPI(q: searchTextField,limit: limit, selection: selection) { result in
             if let result = result {
                 self.items = result
-                print(result)
-                if let all = result.all {
-                    
-                }
             }
         }
     }
