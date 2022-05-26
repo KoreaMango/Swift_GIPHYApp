@@ -7,6 +7,7 @@
 
 import Foundation
 
+// GIF, Sticker 검색 Picker
 enum pickerCase: String, CaseIterable, Identifiable{
     case GIFs , Stickers
     var id: Self {self}

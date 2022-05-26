@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: 요청을 할 때 사용되는 모델
 struct RequestData {
     var api_key : String
     var query : String
@@ -18,6 +19,7 @@ struct RequestData {
     var bundle : String
 }
 
+// MARK: 응답 받을 때 사용되는 모델
 struct ResponseData: Decodable{
     var type: String
     var id : String
@@ -38,6 +40,7 @@ struct ResponseData: Decodable{
     let images: [Images]?
     var title: String
     
+    // Decode 하기 위해 사용되는 CodingKeys
     enum CodingKeys: String, CodingKey {
         case type
         case id
@@ -59,6 +62,7 @@ struct ResponseData: Decodable{
         case title
     }
     
+    // Decoder에 직접 Decode
     init(from decoder:Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         type = try values.decode(String.self, forKey: .type)
@@ -81,6 +85,8 @@ struct ResponseData: Decodable{
          title = try values.decode(String.self, forKey: .title)
     }
 }
+
+// Decode된 Json이 Type에 맞게 파싱된 배열
 struct ResponseDatas: Decodable{
     let all: [ResponseData]?
     

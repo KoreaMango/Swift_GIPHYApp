@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: 응답받을 데이터인 ResponseData의 Images의 모델
 struct Images: Decodable {
     struct fixed_height {
         var url: String

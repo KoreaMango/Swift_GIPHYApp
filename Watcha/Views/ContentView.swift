@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        // 검색화면으로 가는 버튼
         NavigationView{
             NavigationLink{
                 SearchList()

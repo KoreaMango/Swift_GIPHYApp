@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: 응답받을 데이터인 ResponseData의 user의 모델
 struct User: Decodable{
     var avatar_url: String
     var banner_url: String

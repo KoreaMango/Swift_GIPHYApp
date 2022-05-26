@@ -8,14 +8,22 @@
 import SwiftUI
 
 struct SearchList: View {
+    // Data를 들고오기 위한 ViewModel
     @StateObject var searchViewModel = SearchViewModel()
+    
+    // Picker 상태 변수
     @State var selectCase : gifOrSticker = .GIFMode
     
     var body: some View {
         VStack{
+            // 검색바 View
             SearchBar(selectCase: $selectCase)
                 .environmentObject(searchViewModel)
+            
+            // 이미지 종류 Picker
             modePicker(selectCase: $selectCase)
+            
+            // 사진 List
             List {
                 
             }
