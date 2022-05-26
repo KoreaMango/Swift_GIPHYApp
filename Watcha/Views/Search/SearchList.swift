@@ -28,9 +28,20 @@ struct SearchList: View {
             
             
             // 사진 List
-            List {
-                
+            if let items = searchViewModel.items {
+                if let all = items.all {
+                    List{
+                        ForEach(all){ item in
+                           //Text(item.images!)
+                        }
+                    }
+                }
+            } else{
+                List{
+                    
+                }
             }
+            
         }
         .navigationTitle("Search")
         .navigationBarTitleDisplayMode(.inline)

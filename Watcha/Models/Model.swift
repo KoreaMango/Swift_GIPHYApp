@@ -20,7 +20,7 @@ struct RequestData {
 }
 
 // MARK: 응답 받을 때 사용되는 모델
-struct ResponseData: Decodable{
+struct ResponseData: Decodable, Identifiable{
     var type: String
     var id : String
     var slug: String
@@ -31,13 +31,13 @@ struct ResponseData: Decodable{
     var source: String
     var rating: String
     var content_url: String
-    var user : [User]?
+    var user : User?
     var is_sticker : Int
     var source_tld: String
     var source_post_url : String
     var import_datetime: String
     var trending_datetime: String
-    let images: [Images]?
+    let images: URLImage?
     var title: String
     
     // Decode 하기 위해 사용되는 CodingKeys
@@ -75,13 +75,13 @@ struct ResponseData: Decodable{
          source = try values.decode(String.self, forKey: .source)
          rating = try values.decode(String.self, forKey: .rating)
         content_url = try values.decode(String.self, forKey: .content_url)
-        user = try? values.decode([User].self, forKey: .user)
+        user = try? values.decode(User.self, forKey: .user)
          is_sticker = try values.decode(Int.self, forKey: .is_sticker)
          source_tld = try values.decode(String.self, forKey: .source_tld)
          source_post_url = try values.decode(String.self, forKey: .source_post_url)
          import_datetime = try values.decode(String.self, forKey: .import_datetime)
          trending_datetime = try values.decode(String.self, forKey: .trending_datetime)
-         images = try? values.decode([Images].self, forKey: .images)
+         images = try? values.decode(URLImage.self, forKey: .images)
          title = try values.decode(String.self, forKey: .title)
     }
 }

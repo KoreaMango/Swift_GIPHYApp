@@ -22,7 +22,7 @@
 		04CA4AC1283D9F3F0094AC30 /* ModePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4AC0283D9F3F0094AC30 /* ModePicker.swift */; };
 		04CA4AC9283DCFF50094AC30 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4AC8283DCFF50094AC30 /* APIManager.swift */; };
 		04CA4ACD283DD2B10094AC30 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4ACC283DD2B10094AC30 /* User.swift */; };
-		04CA4ACF283DD32A0094AC30 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4ACE283DD32A0094AC30 /* Images.swift */; };
+		04CA4ACF283DD32A0094AC30 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4ACE283DD32A0094AC30 /* URLImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +42,7 @@
 		04CA4AC0283D9F3F0094AC30 /* ModePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModePicker.swift; sourceTree = "<group>"; };
 		04CA4AC8283DCFF50094AC30 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		04CA4ACC283DD2B10094AC30 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		04CA4ACE283DD32A0094AC30 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		04CA4ACE283DD32A0094AC30 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +118,7 @@
 			children = (
 				04CA4ABB283D9D600094AC30 /* Model.swift */,
 				04CA4ACC283DD2B10094AC30 /* User.swift */,
-				04CA4ACE283DD32A0094AC30 /* Images.swift */,
+				04CA4ACE283DD32A0094AC30 /* URLImage.swift */,
 				04AEF9D3283E1CB3002744B7 /* PickerModel.swift */,
 			);
 			path = Models;
@@ -231,7 +231,7 @@
 				04CA4AC9283DCFF50094AC30 /* APIManager.swift in Sources */,
 				04CA4ABC283D9D600094AC30 /* Model.swift in Sources */,
 				04CA4AB6283D9CFE0094AC30 /* SearchList.swift in Sources */,
-				04CA4ACF283DD32A0094AC30 /* Images.swift in Sources */,
+				04CA4ACF283DD32A0094AC30 /* URLImage.swift in Sources */,
 				04CA4ABE283D9DEA0094AC30 /* ContentView.swift in Sources */,
 				04AEF9D0283E0997002744B7 /* AppConstant.swift in Sources */,
 				04CA4AB8283D9D0B0094AC30 /* SearchDetail.swift in Sources */,
