@@ -1,5 +1,5 @@
 //
-//  modePicker.swift
+//  ModePicker.swift
 //  Watcha
 //
 //  Created by 강민규 on 2022/05/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct modePicker: View {
+struct ModePicker: View {
     // Picker의 상태 변수를 Binding
     @Binding var selectCase : gifOrSticker
     var body: some View {
