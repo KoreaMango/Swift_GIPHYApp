@@ -17,20 +17,22 @@ struct SearchResult: View {
                 if let all = items.all {
                     ForEach(all){ item in
                         if let url = item.images?.original.url{
-                            AsyncImage(url: URL(string: url)){ phase in
-                                if let image = phase.image {
-                                    image
-                                        .resizable()
-                                        .scaledToFit()
-                                } else if phase.error != nil {
-                                    Text("No Image")
-                                } else {
-                                    ProgressView()
+                            NavigationLink{
+                                SearchDetail()
+                            } label:{
+                                AsyncImage(url: URL(string: url)){ phase in
+                                    if let image = phase.image {
+                                        image
+                                            .resizable()
+                                            .scaledToFit()
+                                    } else if phase.error != nil {
+                                        Text("No Image")
+                                    } else {
+                                        ProgressView()
+                                    }
                                 }
+                                .frame(height: 200, alignment: .center)
                             }
-                            .frame(height: 200, alignment: .center)
-                            
-                            
                         }
                     }
                 }
@@ -38,6 +40,7 @@ struct SearchResult: View {
         }
     }
 }
+
 
 struct SearchResult_Previews: PreviewProvider {
     static var previews: some View {
