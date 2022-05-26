@@ -28,31 +28,8 @@ struct SearchList: View {
             
             
             // 사진 List
-            ScrollView{
-                if let items = searchViewModel.items {
-                    if let all = items.all {
-                        ForEach(all){ item in
-                            if let url = item.images?.original.url{
-                                AsyncImage(url: URL(string: url)){ phase in
-                                    if let image = phase.image {
-                                        image
-                                            .resizable()
-                                            .scaledToFit()
-                                    } else if phase.error != nil {
-                                        Text("No Image")
-                                    } else {
-                                        ProgressView()
-                                    }
-                                }
-                                .frame(height: 200, alignment: .center)
-                                
-                                
-                            }
-                        }
-                    }
-                }
-                
-            }
+            SearchResult(selectCase : $selectCase)
+                .environmentObject(searchViewModel)
             
         }
         .navigationTitle("Search")
