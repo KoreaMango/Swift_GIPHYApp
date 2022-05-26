@@ -10,8 +10,12 @@ import SwiftUI
 struct SearchBar: View {
     // SearchList에서 받아온 ViewModel을 환경 변수로 이어 받음
     @EnvironmentObject var searchViewModel: SearchViewModel
+    
     // SearchList에서 만든 Picker 상태 변수를 Binding
     @Binding var selectCase : gifOrSticker
+    
+    // 읽어오는 글 수 Binidng
+    @Binding var limit : Int
     
     var body: some View {
         HStack{
@@ -22,7 +26,7 @@ struct SearchBar: View {
             Spacer()
             // Button 클릭시 ViewModel의 getResult함수 실행
             Button(action: {
-                searchViewModel.getResult(selection: selectCase)
+                searchViewModel.getResult(selection: selectCase, limit: limit)
             }){
                 Image(systemName: "magnifyingglass")
             }
@@ -38,7 +42,7 @@ struct SearchBar: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar(selectCase: .constant(.GIFMode))
+        SearchBar(selectCase: .constant(.GIFMode), limit: .constant(25))
             .environmentObject(SearchViewModel())
     }
 }
