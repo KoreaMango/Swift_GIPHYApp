@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct ModePicker: View {
+    // SearchList에서 받아온 ViewModel을 환경 변수로 이어 받음
+    @EnvironmentObject var searchViewModel: SearchViewModel
+    
+    // 읽어오는 글 수 Binidng
+    @Binding var limit : Int
+    
     // Picker의 상태 변수를 Binding
     @Binding var selectCase : gifOrSticker
     var body: some View {
@@ -19,11 +25,14 @@ struct ModePicker: View {
             }
         }
         .pickerStyle(.segmented)
+        .onChange(of: selectCase){ newValue in
+            searchViewModel.getResult(selection: selectCase, limit: limit)
+        }
     }
 }
 
 struct ModePicker_Previews: PreviewProvider {
     static var previews: some View {
-        ModePicker(selectCase: .constant(.GIFMode))
+        ModePicker(limit : .constant(25), selectCase: .constant(.GIFMode))
     }
 }

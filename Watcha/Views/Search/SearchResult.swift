@@ -11,9 +11,6 @@ struct SearchResult: View {
     // SearchList에서 받아온 ViewModel을 환경 변수로 이어 받음
     @EnvironmentObject var searchViewModel: SearchViewModel
     
-    // SearchList에서 만든 Picker 상태 변수를 Binding
-    @Binding var selectCase : gifOrSticker
-    
     var body: some View {
         ScrollView{
             if let items = searchViewModel.items {
@@ -44,6 +41,6 @@ struct SearchResult: View {
 
 struct SearchResult_Previews: PreviewProvider {
     static var previews: some View {
-        SearchResult(selectCase: .constant(.GIFMode))
+        SearchResult()
     }
 }

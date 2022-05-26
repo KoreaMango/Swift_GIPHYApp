@@ -23,5 +23,9 @@ class SearchViewModel : ObservableObject{
         }
     }
     
+    func itemsInit (){
+        self.items = nil
+    }
+    
     
 }

@@ -17,25 +17,35 @@ struct SearchList: View {
     // 읽어오는 글 수
     @State var limit : Int = 25
     
+    // 버튼을 클릭했는지 여부
+    @State var isClicked: Bool = false
+    
     var body: some View {
         VStack{
             // 검색바 View
-            SearchBar(selectCase: $selectCase, limit: $limit)
+            SearchBar(selectCase: $selectCase, limit: $limit,isClicked: $isClicked)
                 .environmentObject(searchViewModel)
             
             // 이미지 종류 Picker
-            ModePicker(selectCase: $selectCase)
-            
+            ModePicker(limit: $limit, selectCase: $selectCase)
+                .environmentObject(searchViewModel)
             
             // 사진 List
-            SearchResult(selectCase : $selectCase)
-                .environmentObject(searchViewModel)
+            if selectCase == .GIFMode {
+                SearchResult()
+                    .environmentObject(searchViewModel)
+            } else if selectCase == .StickerMode{
+                SearchResult()
+                    .environmentObject(searchViewModel)
+            }
             
         }
         .navigationTitle("Search")
         .navigationBarTitleDisplayMode(.inline)
-        
+
     }
+    
+
 }
 
 struct SearchListView_Previews: PreviewProvider {

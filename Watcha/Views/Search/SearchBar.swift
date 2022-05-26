@@ -17,6 +17,9 @@ struct SearchBar: View {
     // 읽어오는 글 수 Binidng
     @Binding var limit : Int
     
+    // 버튼 클릭 여부
+    @Binding var isClicked : Bool
+    
     var body: some View {
         HStack{
             // TextField로 ViewModel의 변수와 연동
@@ -27,6 +30,7 @@ struct SearchBar: View {
             // Button 클릭시 ViewModel의 getResult함수 실행
             Button(action: {
                 searchViewModel.getResult(selection: selectCase, limit: limit)
+                isClicked = true
             }){
                 Image(systemName: "magnifyingglass")
             }
@@ -42,7 +46,7 @@ struct SearchBar: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar(selectCase: .constant(.GIFMode), limit: .constant(25))
+        SearchBar(selectCase: .constant(.GIFMode), limit: .constant(25), isClicked: .constant(false))
             .environmentObject(SearchViewModel())
     }
 }
