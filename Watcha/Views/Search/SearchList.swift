@@ -21,7 +21,7 @@ struct SearchList: View {
                 .environmentObject(searchViewModel)
             
             // 이미지 종류 Picker
-            modePicker(selectCase: $selectCase)
+            ModePicker(selectCase: $selectCase)
             
             // 사진 List
             List {

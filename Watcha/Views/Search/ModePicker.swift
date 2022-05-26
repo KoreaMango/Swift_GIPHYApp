@@ -22,8 +22,8 @@ struct ModePicker: View {
     }
 }
 
-struct modePicker_Previews: PreviewProvider {
+struct ModePicker_Previews: PreviewProvider {
     static var previews: some View {
-        modePicker(selectCase: .constant(.GIFMode))
+        ModePicker(selectCase: .constant(.GIFMode))
     }
 }
