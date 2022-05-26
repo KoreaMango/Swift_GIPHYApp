@@ -8,15 +8,13 @@
 import Foundation
 import Alamofire
 
-public typealias FailureMessage = String
-
 class APIManager {
     public static let shared = APIManager()
     
     private let apiKeyOptional = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String
     var finalURL : String = ""
     
-    func callAPI(q: String, limit: Int = 25 , offset : Int = 0 , rating : String = "g", lang: String = "en", selection: gifOrSticker) {
+    func callAPI(q: String, limit: Int = 25 , offset : Int = 0 , rating : String = "g", lang: String = "en", selection: gifOrSticker, completion : @escaping (ResponseDatas?) -> Void) {
         
         
         if let apiKey = apiKeyOptional {
@@ -29,13 +27,21 @@ class APIManager {
             }
         }
         
+        
         let request = AF.request(finalURL)
         request
             .validate()
             .responseDecodable(of: ResponseDatas.self){ response in
-                
-               debugPrint(response)
-
+                switch response.result{
+                case .success:
+                    completion(response.value ?? nil)
+                case .failure(let err):
+                    print(err)
+                }
             }
+        
+        
     }
+    
+    
 }
