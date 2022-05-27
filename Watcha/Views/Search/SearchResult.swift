@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Alamofire
 
 struct SearchResult: View {
     // SearchList에서 받아온 ViewModel을 환경 변수로 이어 받음

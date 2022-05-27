@@ -12,13 +12,13 @@ struct SearchList: View {
     @StateObject var searchViewModel = SearchViewModel()
     
     // Picker 상태 변수
-    @State var selectCase : gifOrSticker = .GIFMode
+    @State private var selectCase : gifOrSticker = .GIFMode
     
     // 읽어오는 글 수
-    @State var limit : Int = 25
+    @State private var limit : Int = 25
     
     // 버튼을 클릭했는지 여부
-    @State var isClicked: Bool = false
+    @State private var isClicked: Bool = false
     
     var body: some View {
         VStack{
@@ -40,8 +40,11 @@ struct SearchList: View {
             }
             
         }
+///      iOS 14 이상부터 아래 코드
         .navigationTitle("Search")
         .navigationBarTitleDisplayMode(.inline)
+///      iOS 13 ~ 14
+//        .navigationBarTitle("Search",displayMode: .inline)
 
     }
     

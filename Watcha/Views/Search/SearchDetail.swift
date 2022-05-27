@@ -15,7 +15,8 @@ struct SearchDetail: View {
     
     var body: some View {
         VStack{
-            FavoriteButton()
+            FavoriteButton( id: id)
+                .environmentObject(searchViewModel)
             if let index = searchViewModel.items?.all!.firstIndex(where: {$0.id == id}){
                 AsyncImage(url: URL(string : searchViewModel.items!.all![index].images!.original.url)!) {phase in
                     if let image = phase.image {
@@ -27,7 +28,7 @@ struct SearchDetail: View {
                     } else {
                         ProgressView()
                     }
-                }
+               }
             }
         }
     }
