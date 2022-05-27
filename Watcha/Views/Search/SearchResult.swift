@@ -16,28 +16,34 @@ struct SearchResult: View {
             if let items = searchViewModel.items {
                 if let all = items.all {
                     ForEach(all){ item in
-                        if let url = item.images?.original.url{
-                            NavigationLink{
-                                SearchDetail()
-                            } label:{
-                                AsyncImage(url: URL(string: url)){ phase in
-                                    if let image = phase.image {
-                                        image
-                                            .resizable()
-                                            .scaledToFit()
-                                    } else if phase.error != nil {
-                                        Text("No Image")
-                                    } else {
-                                        ProgressView()
-                                    }
+                        let url = getURL(item: item)
+                        NavigationLink{
+                            SearchDetail(id: item.id)
+                                .environmentObject(searchViewModel)
+                        } label:{
+                            AsyncImage(url: url){ phase in
+                                if let image = phase.image {
+                                    image
+                                        .resizable()
+                                        .scaledToFit()
+                                } else if phase.error != nil {
+                                    Text("No Image")
+                                } else {
+                                    ProgressView()
                                 }
-                                .frame(height: 200, alignment: .center)
                             }
+                            .frame(height: 200, alignment: .center)
                         }
                     }
                 }
             }
         }
+    }
+    func getURL(item: ResponseData) -> URL?{
+        if let url = item.images?.original.url{
+            return URL(string: url)
+        }
+        return nil
     }
 }
 

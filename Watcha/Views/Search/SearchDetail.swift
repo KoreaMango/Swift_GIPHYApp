@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct SearchDetail: View {
+    @EnvironmentObject var searchViewModel: SearchViewModel
+    
+    var id : String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if let index = searchViewModel.items?.all?.firstIndex(where: {$0.id == id}){
+            AsyncImage(url: URL(string : searchViewModel.items!.all![index].images!.original.url)!)
+        }
     }
 }
 
 struct SearchDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchDetail()
+        SearchDetail(id: "" )
     }
 }
