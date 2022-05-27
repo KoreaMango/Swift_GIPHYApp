@@ -164,9 +164,9 @@
 				04AEF9D72840E4D5002744B7 /* Helper */,
 				04CA4AB5283D9CFE0094AC30 /* SearchList.swift */,
 				04CA4AB3283D9CE90094AC30 /* SearchBar.swift */,
-				04AEF9C7283DFC73002744B7 /* SearchViewModel.swift */,
 				04AEF9D5283F82BD002744B7 /* SearchResult.swift */,
 				04CA4AB7283D9D0B0094AC30 /* SearchDetail.swift */,
+				04AEF9C7283DFC73002744B7 /* SearchViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";

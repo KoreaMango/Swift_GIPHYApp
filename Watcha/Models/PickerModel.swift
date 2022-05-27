@@ -11,6 +11,8 @@ import Foundation
 enum pickerCase: String, CaseIterable, Identifiable{
     case GIFs , Stickers
     var id: Self {self}
+    
+    
     var selectCase: gifOrSticker {
         switch self {
         case .GIFs: return .GIFMode

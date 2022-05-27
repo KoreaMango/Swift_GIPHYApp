@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct FavoriteButton: View {
-    @State private var isFavorite : Bool = false
+    // MARK: - 변수
+    // SearchList에서부터 받아온 ViewModel의 환경 변수
     @EnvironmentObject var searchViewModel : SearchViewModel
     
+    // 좋아요 상태 변수
+    @State private var isFavorite : Bool = false
+ 
+    // SearchResult에서 클릭한 Image ID
     var id : String
     
+    // MARK: - View
     var body: some View {
         VStack{
             Toggle ("Favorite", isOn: $isFavorite)
@@ -21,20 +27,20 @@ struct FavoriteButton: View {
                     // 토글이 On으로 바뀐다면
                     if isOn {
                         // 로컬에 데이터를 저장한다.
-                        saveData()
+                        searchViewModel.saveData(id: id)
                     }
                     
                     // 토글이 Off 로 바뀐다면
                     else{
                         // 로컬에 데이터를 삭제한다.
-                        deleteData()
+                        searchViewModel.deleteData(id: id)
                     }
                     
                 }
                 .padding()
         }.onAppear{
             // 화면이 나타날 때 로컬 데이터에 해당 이미지의 id 값이 있는지 확인한다.
-            if isFavoriteData() {
+            if searchViewModel.isFavoriteData(id: id) {
                 isFavorite = true
             } else {
                 isFavorite = false
@@ -43,30 +49,10 @@ struct FavoriteButton: View {
         
     }
     
-    func isFavoriteData() -> Bool{
-        // 로컬의 데이터를 들고온다.
-        // 현재 DetailView에 있는 Image의 ID 값을 로컬 데이터에서 검색한다.
-        
-            // 검색이 되면 좋아요가 눌러진 상태
-                // true를 return 한다.
-            // 검색이 안되면 좋아요가 안눌러진 상태
-                // false를 return 한다.
-        
-        return true
-    }
-    
-    func saveData () {
-        // 현재 Detail View의 Image의 Id 값을 사용해서 ReponseData 타입으로 로컬 JSON에 저장한다.
-    }
-    
-    func deleteData(){
-        // 현재 Detail View의 Image의 Id 값을 사용해서 Index 값을 찾는다.
-        
-        // Index 값을 사용해서 데이터를 삭제한다.
-    }
 
 }
 
+// MARK: - Previews
 struct FavoriteButton_Previews: PreviewProvider {
     static var previews: some View {
         FavoriteButton(id: "")

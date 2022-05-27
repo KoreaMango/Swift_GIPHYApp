@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 
 class APIManager {
+    // MARK: - 변수
     // 싱글톤으로 API 가져오기
     public static let shared = APIManager()
     
@@ -18,6 +19,7 @@ class APIManager {
     // 최종 URL이 담기는 변수
     var finalURL : String = ""
     
+    // MARK: - Function
     // API 값을 들고오는 함수 (검색어 빼고 고정값을 입력함)
     func callAPI(q: String, limit: Int = 25 , offset : Int = 0 , rating : String = "g", lang: String = "en", selection: gifOrSticker, completion : @escaping (ResponseDatas?) -> Void) {
         

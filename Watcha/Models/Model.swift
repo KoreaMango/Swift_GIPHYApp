@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: 요청을 할 때 사용되는 모델
+// MARK: - 요청을 할 때 사용되는 모델
 struct RequestData {
     var api_key : String
     var query : String
@@ -19,7 +19,7 @@ struct RequestData {
     var bundle : String
 }
 
-// MARK: 응답 받을 때 사용되는 모델
+// MARK: - 응답 받을 때 사용되는 모델
 struct ResponseData: Decodable, Identifiable{
     var type: String
     var id : String
@@ -86,7 +86,7 @@ struct ResponseData: Decodable, Identifiable{
     }
 }
 
-// Decode된 Json이 Type에 맞게 파싱된 배열
+//MARK: - Decode된 Json이 Type에 맞게 파싱된 배열
 struct ResponseDatas: Decodable{
     let all: [ResponseData]?
     

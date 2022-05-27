@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: 응답받을 데이터인 ResponseData의 Images의 모델
+// MARK: - 응답받을 데이터인 ResponseData의 Images의 모델
 struct URLImage: Decodable {
     var original : original
     
@@ -16,7 +16,7 @@ struct URLImage: Decodable {
     }
 }
 
-//MARK: original struct
+//MARK: - original struct
 struct original:Decodable {
     var width: String
     var height: String
@@ -41,7 +41,7 @@ struct original:Decodable {
     }
 }
 
-//MARK: 안쓰는 모델
+//MARK: - 안쓰는 모델
 struct original_still {
     var url: String
     var width: String
