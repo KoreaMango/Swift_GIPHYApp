@@ -29,5 +29,21 @@ extension APIManager: ServiceProtocol {
     }
     
     
+    // MARK: - Function
+    
+    func getURL(q: String, limit: Int = 25 , offset : Int = 0 , rating : String = "g", lang: String = "en", selection: gifOrSticker) -> String{
+        var finalURL : String = ""
+        if let apiKey = apiKeyOptional {
+            // Picker의 선택에 따라서 URL이 바뀜
+            if selection == .StickerMode{
+                finalURL = "\(AppConstant.serverURL)\(AppConstant.nextURL.stickerURL)" + "?api_key=" + "\(apiKey)" + "&q=" + "\(q)" +
+                "&limit=" + "\(limit)" + "&offset=" + "\(offset)" + "&rating=" + "\(lang)" + "&lang=" + "\(lang)"
+            } else {
+                finalURL = "\(AppConstant.serverURL)\(AppConstant.nextURL.gifURL)" + "?api_key=" + "\(apiKey)" + "&q=" + "\(q)" +
+                "&limit=" + "\(limit)" + "&offset=" + "\(offset)" + "&rating=" + "\(lang)" + "&lang=" + "\(lang)"
+            }
+        }
+        return finalURL
+    }
    
 }
