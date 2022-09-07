@@ -7,6 +7,14 @@
 
 import Foundation
 
+//MARK: - Decode된 Json이 Type에 맞게 파싱된 배열
+struct ResponseDatas: Decodable{
+    let all: [ResponseData]?
+    
+    enum CodingKeys: String, CodingKey{
+        case all = "data"
+    }
+}
 // MARK: - 요청을 할 때 사용되는 모델
 struct RequestData {
     var api_key : String
@@ -86,11 +94,4 @@ struct ResponseData: Decodable, Identifiable{
     }
 }
 
-//MARK: - Decode된 Json이 Type에 맞게 파싱된 배열
-struct ResponseDatas: Decodable{
-    let all: [ResponseData]?
-    
-    enum CodingKeys: String, CodingKey{
-        case all = "data"
-    }
-}
+
