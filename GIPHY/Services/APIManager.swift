@@ -8,42 +8,35 @@
 import Foundation
 import Combine
 
-import Alamofire
 
 protocol ServiceProtocol {
-    func fetchImages() -> AnyPublisher<DataResponse<ResponseDatas, APIError>, Never> 
+    func request(q : String, selection: gifOrSticker) -> AnyPublisher<Data, NetworkError>
 }
 
 class APIManager {
     // MARK: - 변수
     // 싱글톤으로 API 가져오기
     public static let shared = APIManager()
-    // Info에 있는 API_KEY 들고오기
-    private let apiKeyOptional = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String
-    private init() {}
+    
 }
 
 extension APIManager: ServiceProtocol {
-    func fetchImages() -> AnyPublisher<DataResponse<ResponseDatas, APIError>, Never> {
-        <#code#>
+    func request(q : String, selection: gifOrSticker) -> AnyPublisher<Data, NetworkError>{
+        let url = Parsing.shared.getURL(q: q, selection: selection)!
+    
+        return URLSession.shared
+                .dataTaskPublisher(for: url)
+                .tryMap() { data, response -> Data in
+                    guard let httpResponse = response as? HTTPURLResponse,
+                        httpResponse.statusCode == 200 else {
+                            throw URLError(.badServerResponse)
+                        }
+                        return data
+                    }
+                .mapError({ error -> NetworkError in
+                        .unknownError(message: error.localizedDescription)
+                })
+                .eraseToAnyPublisher()
     }
-    
-    
-    // MARK: - Function
-    
-    func getURL(q: String, limit: Int = 25 , offset : Int = 0 , rating : String = "g", lang: String = "en", selection: gifOrSticker) -> String{
-        var finalURL : String = ""
-        if let apiKey = apiKeyOptional {
-            // Picker의 선택에 따라서 URL이 바뀜
-            if selection == .StickerMode{
-                finalURL = "\(AppConstant.serverURL)\(AppConstant.nextURL.stickerURL)" + "?api_key=" + "\(apiKey)" + "&q=" + "\(q)" +
-                "&limit=" + "\(limit)" + "&offset=" + "\(offset)" + "&rating=" + "\(lang)" + "&lang=" + "\(lang)"
-            } else {
-                finalURL = "\(AppConstant.serverURL)\(AppConstant.nextURL.gifURL)" + "?api_key=" + "\(apiKey)" + "&q=" + "\(q)" +
-                "&limit=" + "\(limit)" + "&offset=" + "\(offset)" + "&rating=" + "\(lang)" + "&lang=" + "\(lang)"
-            }
-        }
-        return finalURL
-    }
-   
 }
+

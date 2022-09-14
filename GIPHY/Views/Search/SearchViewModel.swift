@@ -6,27 +6,39 @@
 //
 
 import Foundation
+import Combine
 
 class SearchViewModel : ObservableObject{
-    // MARK: - 변수
-    // TextField 로 실시간으로 바뀌는 변수
+    // MARK: - ViewModel -> View
+    /// TextField 로 실시간으로 바뀌는 변수
     @Published var searchTextField : String = ""
+    /// API로 서버에서 들고온 데이터를 저장
+    @Published var items = [ResponseDatas]()
     
-    // API로 서버에서 들고온 데이터를 저장
-    @Published var items : ResponseDatas?
+    private var dataManager: ServiceProtocol
+    private var cancellabls = Set<AnyCancellable>()
+    
+    init(dataManager: ServiceProtocol = APIManager.shared){
+        self.dataManager = dataManager
+    }
     
     // MARK: - API Function
-    // Picker의 상태변수에 따라서 들고오는 API
-    func getResult(selection: gifOrSticker, limit: Int) {
-        APIManager.shared.callAPI(q: searchTextField,limit: limit, selection: selection) { result in
-            if let result = result {
-                self.items = result
-            }
-        }
+    
+    func getDataList(selection : gifOrSticker, limit : Int) {
+        let data = dataManager.request(q: searchTextField, selection: selection)
+        
+        data
+            .decode(type: ResponseDatas.self, decoder: JSONDecoder())
+            .sink(receiveCompletion: {
+                print ("Received completion: \($0).")
+            },  receiveValue: {user in
+                print ("Received user: \(user).")
+            })
+            .store(in: &cancellabls)
     }
     
     func itemsInit (){
-        self.items = nil
+        self.items = []
     }
     
     // MARK: - Local Data Function
@@ -52,4 +64,13 @@ class SearchViewModel : ObservableObject{
         
         // Index 값을 사용해서 데이터를 삭제한다.
     }
+    
+    /// ResponseData에서 URL만 추출하는 함수
+    func getURL(item: ResponseData) -> URL?{
+        if let url = item.images?.original.url{
+            return URL(string: url)
+        }
+        return nil
+    }
+    
 }
