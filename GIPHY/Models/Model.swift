@@ -16,16 +16,16 @@ struct ResponseDatas: Decodable{
     }
 }
 // MARK: - 요청을 할 때 사용되는 모델
-struct RequestData {
-    var api_key : String
-    var query : String
-    var limit : Int
-    var offset : Int
-    var rating : String
-    var lang : String
-    var random_id : String
-    var bundle : String
-}
+//struct RequestData {
+//    var api_key : String
+//    var query : String
+//    var limit : Int
+//    var offset : Int
+//    var rating : String
+//    var lang : String
+//    var random_id : String
+//    var bundle : String
+//}
 
 // MARK: - 응답 받을 때 사용되는 모델
 struct ResponseData: Decodable, Identifiable{

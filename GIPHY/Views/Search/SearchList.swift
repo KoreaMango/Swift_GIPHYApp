@@ -9,13 +9,13 @@ import SwiftUI
 
 struct SearchList: View {
     // MARK: - 변수
-    // Data를 들고오기 위한 ViewModel
+    /// Data를 들고오기 위한 ViewModel
     @StateObject var searchViewModel = SearchViewModel()
     
-    // Picker 상태 변수
+    /// Picker 상태 변수
     @State private var selectCase : gifOrSticker = .GIFMode
     
-    // 읽어오는 글 수
+    /// 읽어오는 글 수
     @State private var limit : Int = 25
 
     
@@ -36,11 +36,8 @@ struct SearchList: View {
 
             
         }
-///      iOS 14 이상부터 아래 코드
         .navigationTitle("Search")
         .navigationBarTitleDisplayMode(.inline)
-///      iOS 13 ~ 14
-//        .navigationBarTitle("Search",displayMode: .inline)
 
     }
     
