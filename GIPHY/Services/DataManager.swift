@@ -13,14 +13,14 @@ protocol ServiceProtocol {
     func request(q : String, selection: gifOrSticker) -> AnyPublisher<Data, NetworkError>
 }
 
-class APIManager {
+class DataManager {
     // MARK: - 변수
     // 싱글톤으로 API 가져오기
-    public static let shared = APIManager()
+    public static let shared = DataManager()
     
 }
 
-extension APIManager: ServiceProtocol {
+extension DataManager: ServiceProtocol {
     func request(q : String, selection: gifOrSticker) -> AnyPublisher<Data, NetworkError>{
         let url = Parsing.shared.getURL(q: q, selection: selection)!
     
