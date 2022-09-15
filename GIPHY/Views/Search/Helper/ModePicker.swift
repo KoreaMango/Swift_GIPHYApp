@@ -29,7 +29,8 @@ struct ModePicker: View {
         }
         .pickerStyle(.segmented)
         .onChange(of: selectCase){ newValue in // Picker 가 변경되면 해당 case에 맞게 데이터를 다시 들고옴
-            searchViewModel.getResult(selection: selectCase, limit: limit)
+            searchViewModel
+                .getDataList(selection: selectCase, limit: limit)
         }
     }
 }

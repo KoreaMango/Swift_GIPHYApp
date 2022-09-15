@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		048799C828D3083600CD9353 /* URLImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048799C728D3083600CD9353 /* URLImageLoader.swift */; };
+		048799CC28D315EF00CD9353 /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048799CB28D315EF00CD9353 /* URLImageView.swift */; };
+		049DAEBE28D1D83D00E189B7 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049DAEBD28D1D83D00E189B7 /* NetworkError.swift */; };
 		04AEF9C8283DFC73002744B7 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AEF9C7283DFC73002744B7 /* SearchViewModel.swift */; };
 		04AEF9CB283E0773002744B7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04AEF9CA283E0773002744B7 /* Alamofire */; };
 		04AEF9D0283E0997002744B7 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AEF9CF283E0997002744B7 /* AppConstant.swift */; };
@@ -23,12 +26,16 @@
 		04CA4ABC283D9D600094AC30 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4ABB283D9D600094AC30 /* Model.swift */; };
 		04CA4ABE283D9DEA0094AC30 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4ABD283D9DEA0094AC30 /* ContentView.swift */; };
 		04CA4AC1283D9F3F0094AC30 /* ModePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4AC0283D9F3F0094AC30 /* ModePicker.swift */; };
-		04CA4AC9283DCFF50094AC30 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4AC8283DCFF50094AC30 /* APIManager.swift */; };
+		04CA4AC9283DCFF50094AC30 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4AC8283DCFF50094AC30 /* DataManager.swift */; };
 		04CA4ACD283DD2B10094AC30 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4ACC283DD2B10094AC30 /* User.swift */; };
 		04CA4ACF283DD32A0094AC30 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4ACE283DD32A0094AC30 /* URLImage.swift */; };
+		04D5B4AE28D0896E00F32FA1 /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D5B4AD28D0896E00F32FA1 /* Parsing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		048799C728D3083600CD9353 /* URLImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageLoader.swift; sourceTree = "<group>"; };
+		048799CB28D315EF00CD9353 /* URLImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
+		049DAEBD28D1D83D00E189B7 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		04AEF9C7283DFC73002744B7 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		04AEF9CF283E0997002744B7 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		04AEF9D1283E0FE6002744B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -47,9 +54,10 @@
 		04CA4ABB283D9D600094AC30 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		04CA4ABD283D9DEA0094AC30 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		04CA4AC0283D9F3F0094AC30 /* ModePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModePicker.swift; sourceTree = "<group>"; };
-		04CA4AC8283DCFF50094AC30 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		04CA4AC8283DCFF50094AC30 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		04CA4ACC283DD2B10094AC30 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		04CA4ACE283DD32A0094AC30 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
+		04D5B4AD28D0896E00F32FA1 /* Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,7 @@
 			children = (
 				04CA4AC0283D9F3F0094AC30 /* ModePicker.swift */,
 				04AEF9D82840E4E9002744B7 /* FavoriteButton.swift */,
+				048799CB28D315EF00CD9353 /* URLImageView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -174,7 +183,10 @@
 		04CA4AC7283DCFB50094AC30 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				04CA4AC8283DCFF50094AC30 /* APIManager.swift */,
+				04CA4AC8283DCFF50094AC30 /* DataManager.swift */,
+				048799C728D3083600CD9353 /* URLImageLoader.swift */,
+				04D5B4AD28D0896E00F32FA1 /* Parsing.swift */,
+				049DAEBD28D1D83D00E189B7 /* NetworkError.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -256,7 +268,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04CA4AC9283DCFF50094AC30 /* APIManager.swift in Sources */,
+				049DAEBE28D1D83D00E189B7 /* NetworkError.swift in Sources */,
+				04CA4AC9283DCFF50094AC30 /* DataManager.swift in Sources */,
 				04CA4ABC283D9D600094AC30 /* Model.swift in Sources */,
 				04CA4AB6283D9CFE0094AC30 /* SearchList.swift in Sources */,
 				04AEF9D92840E4E9002744B7 /* FavoriteButton.swift in Sources */,
@@ -269,8 +282,11 @@
 				04CA4AB4283D9CE90094AC30 /* SearchBar.swift in Sources */,
 				04CA4AA5283D9C250094AC30 /* GIPHYApp.swift in Sources */,
 				04CA4AC1283D9F3F0094AC30 /* ModePicker.swift in Sources */,
+				048799C828D3083600CD9353 /* URLImageLoader.swift in Sources */,
+				04D5B4AE28D0896E00F32FA1 /* Parsing.swift in Sources */,
 				04AEF9D4283E1CB3002744B7 /* PickerModel.swift in Sources */,
 				04CA4ACD283DD2B10094AC30 /* User.swift in Sources */,
+				048799CC28D315EF00CD9353 /* URLImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

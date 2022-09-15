@@ -10,7 +10,8 @@ import Combine
 
 
 protocol ServiceProtocol {
-    func request(q : String, selection: gifOrSticker) -> AnyPublisher<Data, NetworkError>
+    func requestData(q : String, selection: gifOrSticker) -> AnyPublisher<Data, NetworkError>
+    func requestImage(url: URL) -> AnyPublisher<Data, NetworkError>
 }
 
 class DataManager {
@@ -21,7 +22,7 @@ class DataManager {
 }
 
 extension DataManager: ServiceProtocol {
-    func request(q : String, selection: gifOrSticker) -> AnyPublisher<Data, NetworkError>{
+    func requestData(q : String, selection: gifOrSticker) -> AnyPublisher<Data, NetworkError>{
         let url = Parsing.shared.getURL(q: q, selection: selection)!
     
         return URLSession.shared
@@ -38,5 +39,22 @@ extension DataManager: ServiceProtocol {
                 })
                 .eraseToAnyPublisher()
     }
+    
+    func requestImage(url: URL) -> AnyPublisher<Data, NetworkError> {
+        return URLSession.shared
+            .dataTaskPublisher(for: url)
+            .tryMap() { data, response -> Data in
+                guard let httpResponse = response as? HTTPURLResponse,
+                    httpResponse.statusCode == 200 else {
+                        throw URLError(.badServerResponse)
+                    }
+                    return data
+                }
+            .mapError({ error -> NetworkError in
+                    .unknownError(message: error.localizedDescription)
+            })
+            .eraseToAnyPublisher()
+    }
+  
 }
 

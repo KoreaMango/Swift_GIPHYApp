@@ -21,19 +21,19 @@ struct SearchDetail: View {
                 .environmentObject(searchViewModel)
             
             // item의 id 값과 선택된 id 값이 같으면
-            if let index = searchViewModel.items?.all!.firstIndex(where: {$0.id == id}){
-                AsyncImage(url: URL(string : searchViewModel.items!.all![index].images!.original.url)!) {phase in
-                    if let image = phase.image {
-                        image
-                            .resizable()
-                            .scaledToFit()
-                    } else if phase.error != nil {
-                        Text("No Image")
-                    } else {
-                        ProgressView()
-                    }
-               }
-            }
+//            if let index = searchViewModel.items?.all!.firstIndex(where: {$0.id == id}){
+//                AsyncImage(url: URL(string : searchViewModel.items!.all![index].images!.original.url)!) {phase in
+//                    if let image = phase.image {
+//                        image
+//                            .resizable()
+//                            .scaledToFit()
+//                    } else if phase.error != nil {
+//                        Text("No Image")
+//                    } else {
+//                        ProgressView()
+//                    }
+//               }
+//            }
             Spacer()
         }
     }

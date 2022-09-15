@@ -6,15 +6,39 @@
 //
 
 import SwiftUI
+import Combine
 
 struct URLImageView: View {
+    @StateObject private var imageLoader = URLImageLoader()
+    
+    private let url: URL?
+    
+    init(url: URL?){
+        self.url = url
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        content
+            .onAppear{
+                imageLoader.fetch(url: url)
+            }
+    }
+    
+    private var content: some View {
+        Group{
+            if let image = imageLoader.image {
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            } else {
+                Text("Loading...")
+            }
+        }
     }
 }
 
 struct URLImageView_Previews: PreviewProvider {
     static var previews: some View {
-        URLImageView()
+        URLImageView(url: nil)
     }
 }

@@ -12,34 +12,35 @@ class SearchViewModel : ObservableObject{
     // MARK: - ViewModel -> View
     /// TextField 로 실시간으로 바뀌는 변수
     @Published var searchTextField : String = ""
+    
     /// API로 서버에서 들고온 데이터를 저장
-    @Published var items = [ResponseDatas]()
+    @Published var items = [ResponseData]()
     
     private var dataManager: ServiceProtocol
+    
     private var cancellabls = Set<AnyCancellable>()
     
-    init(dataManager: ServiceProtocol = APIManager.shared){
+    init(dataManager: ServiceProtocol = DataManager.shared){
         self.dataManager = dataManager
     }
     
     // MARK: - API Function
     
     func getDataList(selection : gifOrSticker, limit : Int) {
-        let data = dataManager.request(q: searchTextField, selection: selection)
+        let data = dataManager.requestData(q: searchTextField, selection: selection)
         
         data
             .decode(type: ResponseDatas.self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: {
                 print ("Received completion: \($0).")
             },  receiveValue: {user in
-                print ("Received user: \(user).")
+                self.items = user.all ?? []
+                print ("Received user: \(self.items).")
             })
             .store(in: &cancellabls)
     }
-    
-    func itemsInit (){
-        self.items = []
-    }
+
     
     // MARK: - Local Data Function
     func isFavoriteData(id : String) -> Bool{
