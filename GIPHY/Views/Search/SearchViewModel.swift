@@ -66,7 +66,7 @@ class SearchViewModel : ObservableObject{
     }
     
     /// ResponseData에서 URL만 추출하는 함수
-    func getURL(item: ResponseData) -> URL?{
+    func getImageURL(item: ResponseData) -> URL?{
         if let url = item.images?.original.url{
             return URL(string: url)
         }
