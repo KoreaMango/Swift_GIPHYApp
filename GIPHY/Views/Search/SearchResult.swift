@@ -23,7 +23,7 @@ struct SearchResult: View {
                         // ResponseData에서 URL 추출
                         let url = searchViewModel.getImageURL(item: item)
                         NavigationLink{
-                            SearchDetail(id: item.id)
+                            SearchDetail(id: item.id, url: url)
                                 .environmentObject(searchViewModel)
                         } label:{
                             URLImageView(url: url)
