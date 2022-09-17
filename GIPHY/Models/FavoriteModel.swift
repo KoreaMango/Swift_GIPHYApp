@@ -12,11 +12,11 @@ struct FavoriteUDS: Codable {
 }
 
 struct FavoriteModel : Codable{
-    var responseData : ResponseData
+    var id : String
     var isFavorite : Bool
     
     init(responseData: ResponseData) {
-        self.responseData = responseData
+        self.id = responseData.id
         self.isFavorite = false
     }
 }
