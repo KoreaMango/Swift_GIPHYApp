@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - 응답받을 데이터인 ResponseData의 Images의 모델
-struct URLImage: Decodable {
+struct URLImage: Codable {
     var original : original
     
     enum CodingKeys : String, CodingKey{
@@ -17,7 +17,7 @@ struct URLImage: Decodable {
 }
 
 //MARK: - original struct
-struct original:Decodable {
+struct original : Codable {
     var width: String
     var height: String
     var size: String

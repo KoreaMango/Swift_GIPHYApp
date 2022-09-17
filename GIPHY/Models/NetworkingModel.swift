@@ -28,7 +28,7 @@ struct ResponseDatas: Decodable{
 //}
 
 // MARK: - 응답 받을 때 사용되는 모델
-struct ResponseData: Decodable, Identifiable{
+struct ResponseData: Codable, Identifiable{
     var type: String
     var id : String
     var slug: String

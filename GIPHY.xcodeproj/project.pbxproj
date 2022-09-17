@@ -31,6 +31,7 @@
 		04CA4ACF283DD32A0094AC30 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4ACE283DD32A0094AC30 /* URLImage.swift */; };
 		04D5B4AE28D0896E00F32FA1 /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D5B4AD28D0896E00F32FA1 /* Parsing.swift */; };
 		04F1F4C528D5B95100EC6228 /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1F4C428D5B95100EC6228 /* DiskCache.swift */; };
+		04F1F4C728D5CFB600EC6228 /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1F4C628D5CFB600EC6228 /* FavoriteModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		04CA4ACE283DD32A0094AC30 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 		04D5B4AD28D0896E00F32FA1 /* Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
 		04F1F4C428D5B95100EC6228 /* DiskCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskCache.swift; sourceTree = "<group>"; };
+		04F1F4C628D5CFB600EC6228 /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,9 +156,10 @@
 			isa = PBXGroup;
 			children = (
 				04CA4ABB283D9D600094AC30 /* NetworkingModel.swift */,
+				04F1F4C628D5CFB600EC6228 /* FavoriteModel.swift */,
+				04AEF9D3283E1CB3002744B7 /* PickerModel.swift */,
 				04CA4ACC283DD2B10094AC30 /* User.swift */,
 				04CA4ACE283DD32A0094AC30 /* URLImage.swift */,
-				04AEF9D3283E1CB3002744B7 /* PickerModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				049DAEBE28D1D83D00E189B7 /* NetworkError.swift in Sources */,
 				04CA4AC9283DCFF50094AC30 /* DataManager.swift in Sources */,
 				04CA4ABC283D9D600094AC30 /* NetworkingModel.swift in Sources */,
+				04F1F4C728D5CFB600EC6228 /* FavoriteModel.swift in Sources */,
 				04CA4AB6283D9CFE0094AC30 /* SearchList.swift in Sources */,
 				04AEF9D92840E4E9002744B7 /* FavoriteButton.swift in Sources */,
 				04CA4ACF283DD32A0094AC30 /* URLImage.swift in Sources */,
