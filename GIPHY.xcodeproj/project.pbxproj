@@ -30,6 +30,7 @@
 		04CA4ACD283DD2B10094AC30 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4ACC283DD2B10094AC30 /* User.swift */; };
 		04CA4ACF283DD32A0094AC30 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA4ACE283DD32A0094AC30 /* URLImage.swift */; };
 		04D5B4AE28D0896E00F32FA1 /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D5B4AD28D0896E00F32FA1 /* Parsing.swift */; };
+		04F1F4C528D5B95100EC6228 /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1F4C428D5B95100EC6228 /* DiskCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		04CA4ACC283DD2B10094AC30 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		04CA4ACE283DD32A0094AC30 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 		04D5B4AD28D0896E00F32FA1 /* Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
+		04F1F4C428D5B95100EC6228 /* DiskCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				048799C728D3083600CD9353 /* URLImageLoader.swift */,
 				04D5B4AD28D0896E00F32FA1 /* Parsing.swift */,
 				049DAEBD28D1D83D00E189B7 /* NetworkError.swift */,
+				04F1F4C428D5B95100EC6228 /* DiskCache.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				04CA4ABE283D9DEA0094AC30 /* ContentView.swift in Sources */,
 				04AEF9D0283E0997002744B7 /* AppConstant.swift in Sources */,
 				04CA4AB8283D9D0B0094AC30 /* SearchDetail.swift in Sources */,
+				04F1F4C528D5B95100EC6228 /* DiskCache.swift in Sources */,
 				04AEF9C8283DFC73002744B7 /* SearchViewModel.swift in Sources */,
 				04AEF9D6283F82BD002744B7 /* SearchResult.swift in Sources */,
 				04CA4AB4283D9CE90094AC30 /* SearchBar.swift in Sources */,
