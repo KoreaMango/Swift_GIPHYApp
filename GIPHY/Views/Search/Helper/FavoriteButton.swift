@@ -23,33 +23,18 @@ struct FavoriteButton: View {
         VStack{
             Toggle ("Favorite", isOn: $isFavorite)
                 .onChange(of: isFavorite){ isOn in
-                    
-                    // 토글이 On으로 바뀐다면
                     if isOn {
-                        // 로컬에 데이터를 저장한다.
-                        searchViewModel.saveData(id: id)
+                        searchViewModel.onFavorite(id: id)
+                    } else {
+                        searchViewModel.offFavorite(id: id)
                     }
-                    
-                    // 토글이 Off 로 바뀐다면
-                    else{
-                        // 로컬에 데이터를 삭제한다.
-                        searchViewModel.deleteData(id: id)
-                    }
-                    
                 }
                 .padding()
         }.onAppear{
             // 화면이 나타날 때 로컬 데이터에 해당 이미지의 id 값이 있는지 확인한다.
-            if searchViewModel.isFavoriteData(id: id) {
-                isFavorite = true
-            } else {
-                isFavorite = false
-            }
+            isFavorite = searchViewModel.haveFavorite(id: id)
         }
-        
     }
-    
-
 }
 
 // MARK: - Previews

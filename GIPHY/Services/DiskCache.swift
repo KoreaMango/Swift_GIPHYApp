@@ -14,10 +14,17 @@ protocol DiskCacheProtocol {
 
 
 final class DiskCache {
+    static var shared = DiskCache()
     private var userDefaults : UserDefaults
     
     init (userDefaults : UserDefaults = UserDefaults.standard){
         self.userDefaults = userDefaults
+    }
+    
+    func printObj() {
+        for (key, value) in userDefaults.dictionaryRepresentation() {
+           print("\(key) = \(value) \n")
+         }
     }
 }
 
