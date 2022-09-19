@@ -1,4 +1,6 @@
 # 완성도 v2.0
+![A4 - 1](https://user-images.githubusercontent.com/57595198/190960708-70c9a2f2-d915-41d7-be8e-bc5e8c01ed86.png)
+
 ## Keyword 검색 : ★★★★★
 - URLComponent를 이용한 API 쿼리 작성으로 가독성 향상.
 - Combine과 URLSession 으로 Data를 async하게 가져옴.
